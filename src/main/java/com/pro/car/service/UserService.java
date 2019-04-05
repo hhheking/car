@@ -9,8 +9,12 @@ import org.springframework.stereotype.Service;
 public class UserService {
     @Autowired
     UserMapper user;
-    public Userid findUser(Integer id)
+    public Userid findUser(String name)
     {
-        return user.findUser(id);
+        return user.findUser(name);
+    }
+    public void insertUser(Userid u)
+    {
+        user.insertUser(u);
     }
 }
