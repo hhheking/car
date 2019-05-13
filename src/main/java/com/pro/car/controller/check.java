@@ -10,11 +10,12 @@ public class check {
     @Autowired
     UserService user;
     @RequestMapping(value = "/user")
-    public boolean checkuser(@RequestParam("name") String name,@RequestParam("psw") String password)
+    public boolean checkuser(@RequestParam("name") String name, @RequestParam("psw") String password)
     {
         Userid u = user.findUser(name);
-        if(u.getPassword().equals(password))
+        if(u.getPassword().equals(password)) {
             return true;
+        }
         else
             return false;
     }
